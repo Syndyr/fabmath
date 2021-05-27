@@ -15,6 +15,7 @@ pi = math.pi
 trig = {}
 thermalExpansion = {}
 tensile = {}
+carbonEquivalent = {}
 ssteel = 15
 msteel = 30
 brass = 60
@@ -224,7 +225,23 @@ function rpms(d, co)
 
 end
 
+function carbonEquivalent.IIW(C, Mn, Si, Cr, Mo, V, CU, Ni)
+    return C+((Mn+Si)/6)+((Cr+Mo+V)/5)+((CU + Ni)/15)
+end
 
+function carbonEquivalent.ISO(C, Mn, Cr, Mo, V, CU, Ni)
+    return C+((Mn)/6)+((Cr+Mo+V)/5)+((CU + Ni)/15)
+end
+
+--[[
+
+    C = 0.17
+    Mn = 1.4
+    P = 0.035
+    S = 0.035
+    N = 0.012
+    Cu = 0.55
+]]
 --[[
 
 dia     30mm
